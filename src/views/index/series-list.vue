@@ -23,7 +23,7 @@
                 </div>
 
             </div>
-                <div class="series_pic">
+                <div v-if="items.ad_goods.id" class="series_pic">
                     <router-link :to="'/app/home/productDetail/'+items.ad_goods.id" target = _blank>
                        <img :src="items.ad_goods.goods_front_image" width="340" height="400">
                     </router-link>
@@ -188,7 +188,8 @@ canvas {
     width:654px;
     height:398px;
     overflow:hidden;
-    float:right;
+    margin-left: 30%;
+    // float:right;
     border:1px solid #ccc
 }
 .series_list .pro_list ul {
