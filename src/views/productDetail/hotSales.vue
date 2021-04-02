@@ -5,7 +5,7 @@
     </div>
     <div class="hot_box">
         <ul>
-            <li v-for="item in hotProduct">
+            <li v-for="item in hotProduct"  :key="item.id">
               <router-link :to="'/app/home/productDetail/'+item.id">
                 <img width="194px" height="194px" :src="item.goods_front_image">
                 <p>{{item.goods_brief}}</p>
