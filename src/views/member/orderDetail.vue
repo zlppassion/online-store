@@ -16,7 +16,7 @@
                                 </tr>
                                 <tr>
                                     <td align="right" bgcolor="#ffffff">订单状态：</td>
-                                  <td v-if="orderInfo.pay_status == 'paying' " align="left" bgcolor="#ffffff">待支付&nbsp;&nbsp;&nbsp;&nbsp;<div style="text-align:center"><a :href="orderInfo.alipay_url"><input type="button" onclick="" value="立即使用支付宝支付"></a></div></td>
+                                  <td v-if="orderInfo.pay_status == 'paying' " align="left" bgcolor="#ffffff">待支付&nbsp;&nbsp;&nbsp;&nbsp;<div style="text-align:center"><a><input type="button" @click="alipayClick" value="立即使用支付宝支付"></a></div></td>
                                     <td v-if="orderInfo.pay_status == 'TRADE_SUCCESS' " align="left" bgcolor="#ffffff">已支付</td>
                                 </tr>
                             </tbody>
@@ -174,6 +174,12 @@
                 }).catch(function (error) {
                     console.log(error);
                 });
+            },
+            alipayClick() {
+                alert('支付成功！');
+                this.orderInfo.pay_status = 'TRADE_SUCCESS';
+                console.log('this.orderInfo:', this.orderInfo)
+
             }
         }
     }

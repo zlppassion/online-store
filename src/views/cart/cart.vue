@@ -158,7 +158,6 @@
       deleteGoods(index,id) { //移除购物车
         alert('您确定把该商品移除购物车吗');
         deleteShopCart(id).then((response)=> {
-          console.log(response.data);
           this.goods.goods_list.splice(index,1);
 
           // 更新store数据
@@ -247,8 +246,7 @@
                 order_mount:this.totalPrice
               }
             ).then((response)=> {
-              alert('订单创建成功')
-              console.log('response.data:', response.data)
+              alert('支付成功，即将我的订单页面')
               // window.location.href=response.data.alipay_url;
               window.location.href = 'http://127.0.0.1:8080/#/app/home/member/order';
             }).catch(function (error) {

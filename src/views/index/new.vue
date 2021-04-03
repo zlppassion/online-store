@@ -18,7 +18,7 @@
                     </div>
                     <div class="prolist-r fl">
                         <h3 class="ft14 c333 bold">
-                        <router-link :to="'/app/home/list/'+item.id"  :title="item.name" target = _blank>{{item.name}}</router-link>
+                        <router-link :to="'/app/home/productDetail/'+item.id"  :title="item.name" target = _blank>{{item.name}}</router-link>
                         </h3>
                         <p><em class="c333"></em>{{item.goods_brief}}</p><div>
                         <span class="p-price"><em class="fastbuy_price">￥{{item.shop_price}}元</em><del>原价:￥{{item.market_price}}元</del></span>
